@@ -4,12 +4,12 @@ import {Router} from "@angular/router";
     templateUrl: "src/category.html"
 })
 export class Categories{
-    private router: Router;
+    private routerParam: Router;
     constructor(router:Router){
-        this.router = router;
+        this.routerParam = router;
     }
 
     public onEditCategoryClicked(id: string){
-        this.router.navigate(["editCategory/", id]);
+        this.routerParam.navigate(["editCategory/", id]);
     }   
 }
