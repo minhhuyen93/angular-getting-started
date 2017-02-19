@@ -1,0 +1,11 @@
+<div class="x_content" *ngIf="key">
+    <form class="form-horizontal form-label-left" novalidate="">
+        <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Key<span class="required">*</span>
+                        </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input name="key" required="required" class="form-control col-md-7 col-xs-12" (change)="onValueChange()" [(ngModel)]="key"/>
+            </div>
+        </div>
+    </form>
+</div>
