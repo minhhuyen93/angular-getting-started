@@ -13,6 +13,8 @@ export class Categories{
         let self =this;
         categoryService.getCategories().then((categories:Array<any>)=>{
             self.categories = categories;
+        }).error(function(errors:any){
+            console.log("Errors here: ", errors);
         });
     }
 

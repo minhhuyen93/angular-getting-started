@@ -17,18 +17,19 @@ export class CategoryService {
         // 1 return this.http.get("/api/categories.json").map(this.handleData);
         //return Promise.resolve(this.categories);
         let def = new Promise();
-        def.resolve([{
-            "id": 1,
-            "name": "huyen",
-            "key": "dep trai",
-            "description": "vo dich khap vu tru"
-        },
-        {
-            "id": 2,
-            "name": "hehe",
-            "key": "qua dep trai",
-            "description": "dep trai nhat the gioi"
-        }]);
+        def.reject("errors aaaaa"); 
+        // def.resolve([{
+        //     "id": 1,
+        //     "name": "huyen",
+        //     "key": "dep trai",
+        //     "description": "vo dich khap vu tru"
+        // },
+        // {
+        //     "id": 2,
+        //     "name": "hehe",
+        //     "key": "qua dep trai",
+        //     "description": "dep trai nhat the gioi"
+        // }]);
         return def;
     }
 

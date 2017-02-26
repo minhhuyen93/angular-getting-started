@@ -1,23 +1,40 @@
 
-export class Promise{
-    private data:any = null;
-    private successCallback:any = null;
+export class Promise {
+    private data: any = null;
+    private errors:any = null;
+    private errorCallback:any = null;
+    private successCallback: any = null;
 
-    public then(successCallback:any){
+    public then(successCallback: any) {
         this.successCallback = successCallback;
-this.processPromise();
+        this.processPromise();
         return this;
     }
 
-    public resolve(data:any){
+    public resolve(data: any) {
         this.data = data;
         this.processPromise();
         return this;
     }
 
-    private processPromise(){
-        if(this.data!=null && this.successCallback !=null){
+    public reject(errors:any){
+        this.errors = errors;
+        this.processPromise();
+        return this;
+    }
+
+    public error(errorCallback:any){
+        this.errorCallback = errorCallback;
+        this.processPromise();
+        return this;
+    }
+
+    private processPromise() {
+        if (this.data != null && this.successCallback != null) {
             this.successCallback(this.data);
+        }
+        if(this.errors !=null && this.errorCallback !=null){
+            this.errorCallback(this.errors);
         }
     }
 }
