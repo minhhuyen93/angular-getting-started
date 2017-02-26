@@ -10,7 +10,10 @@ export class Categories{
     public selectedCategory:any;
     constructor(router:Router, categoryService: CategoryService){
         this.routerParam = router;
-        this.categories = categoryService.getCategories();
+        let self =this;
+        categoryService.getCategories().then((categories:Array<any>)=>{
+            self.categories = categories;
+        });
     }
 
     public onEditCategoryClicked(id: string){
