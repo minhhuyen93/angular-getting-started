@@ -9,15 +9,16 @@ export class CategoryService {
     //     { id: 1, name: "huyen", key: "dep trai", description: "vo dich khap vu tru" },
     //     { id: 2, name: "hehe", key: "qua dep trai", description: "dep trai nhat the gioi" }
     // ];
-    // private http: Http;
-    // constructor(http: Http) {
-    //     this.http = http;
-    // }
+    private http: Http;
+    constructor(http: Http) {
+        this.http = http;
+    }
     public getCategories(): Promise {
         // 1 return this.http.get("/api/categories.json").map(this.handleData);
         //return Promise.resolve(this.categories);
         let def = new Promise();
-        def.reject("errors aaaaa"); 
+        //2
+        //def.reject("errors aaaaa"); 
         // def.resolve([{
         //     "id": 1,
         //     "name": "huyen",
@@ -30,6 +31,12 @@ export class CategoryService {
         //     "key": "qua dep trai",
         //     "description": "dep trai nhat the gioi"
         // }]);
+        //3
+        this.http.get("/api/categories.json")
+            .map(this.handleData)
+            .subscribe((data: any) => def.resolve(data),
+            (error: any) => def.reject("file not existed")
+            );
         return def;
     }
 
