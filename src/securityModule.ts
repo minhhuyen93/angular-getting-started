@@ -11,8 +11,9 @@ import { CategorySummary } from "./categorySummary";
 import { FormInput } from "./formInput";
 import { Page } from "./page";
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
+import { HttpModule } from "@angular/http";
 @NgModule({
-    imports: [BrowserModule, FormsModule, SecurityRoutes],
+    imports: [BrowserModule, FormsModule, SecurityRoutes, HttpModule],
     declarations: [LayoutPage, Categories, AddOrEditCategory, RedColor, CategorySummary, FormInput, Page],
     providers: [CategoryService],
     bootstrap: [LayoutPage],

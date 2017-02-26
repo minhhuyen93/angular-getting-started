@@ -11,7 +11,7 @@ export class Categories{
     constructor(router:Router, categoryService: CategoryService){
         this.routerParam = router;
         let self =this;
-        categoryService.getCategories().then((categories:Array<any>)=>{
+        categoryService.getCategories().subscribe((categories:Array<any>)=>{
             self.categories = categories;
         });
     }
