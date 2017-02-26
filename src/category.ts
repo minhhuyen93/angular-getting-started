@@ -19,4 +19,7 @@ export class Categories{
     public onSummaryClicked(category:any){
         this.selectedCategory = category;
     }
+    public onChange(newKey:any){
+        this.selectedCategory.key = newKey;
+    }
 }

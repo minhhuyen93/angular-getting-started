@@ -8,9 +8,10 @@ import { AddOrEditCategory} from "./addOrEditCategory";
 import {CategoryService} from "./categoryService";
 import {RedColor} from "./redColor";
 import {CategorySummary} from "./categorySummary";
+import {FormInput} from "./formInput";
 @NgModule({
     imports: [BrowserModule, FormsModule, SecurityRoutes],
-    declarations: [LayoutPage, Categories, AddOrEditCategory,RedColor, CategorySummary], 
+    declarations: [LayoutPage, Categories, AddOrEditCategory,RedColor, CategorySummary, FormInput], 
     providers:[CategoryService],
     bootstrap: [LayoutPage]
 })
