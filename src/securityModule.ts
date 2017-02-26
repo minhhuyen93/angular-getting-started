@@ -5,9 +5,13 @@ import { LayoutPage } from "./defaultPage";
 import { SecurityRoutes } from "./securityRoutes";
 import { Categories } from "./category";
 import { AddOrEditCategory} from "./addOrEditCategory";
+import {CategoryService} from "./categoryService";
+import {RedColor} from "./redColor";
+import {CategorySummary} from "./categorySummary";
 @NgModule({
     imports: [BrowserModule, FormsModule, SecurityRoutes],
-    declarations: [LayoutPage, Categories, AddOrEditCategory],
+    declarations: [LayoutPage, Categories, AddOrEditCategory,RedColor, CategorySummary], 
+    providers:[CategoryService],
     bootstrap: [LayoutPage]
 })
 export class SecurityModule { }

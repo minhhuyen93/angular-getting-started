@@ -1,61 +1,50 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Basic Tables <small>basic table subtitle</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Basic Tables <small>basic table subtitle</small></h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Settings 1</a>
+            </li>
+            <li><a href="#">Settings 2</a>
+            </li>
+          </ul>
+        </li>
+        <li><a class="close-link"><i class="fa fa-close"></i></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
 
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Username</th>
-                          <th>Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                          <td><button class="btn btn-primary" (click)="onEditCategoryClicked(1)">Edit</button></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                          <td><button class="btn btn-primary" (click)="onEditCategoryClicked(2)">Edit</button></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>@twitter</td>
-                          <td><button class="btn btn-primary" (click)="onEditCategoryClicked(3)">Edit</button></td>
-                        </tr>
-                      </tbody>
-                    </table>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categories">
+            <th scope="row">{{category.id}}</th>
+            <td>{{category.name}}</td>
+            <td>{{category.key}}</td>
+            <td>{{category.description}}</td>
 
-                  </div>
-                </div>
-              </div>
+            <td><button class="btn btn-primary" (click)="onEditCategoryClicked(category.id)">Edit</button></td>
+            <td><button class="btn btn-primary" (click)="onSummaryClicked(category)">Summary Category</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <category-summary  [(data)]="selectedCategory.key" *ngIf="selectedCategory"></category-summary>
+    <label *ngIf="selectedCategory">Key Category change: {{selectedCategory.key}}</label>
+  </div>
+</div>
