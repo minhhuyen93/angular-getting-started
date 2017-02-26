@@ -3,44 +3,15 @@ import { Observable } from "rxjs/observable";
 import "rxjs/add/operator/map";
 import { Injectable } from "@angular/core";
 import { Promise } from "./promise";
+import {IConnector} from "./iconnector";
+import {HttpConnector} from "./httpConnector";
 @Injectable()
 export class CategoryService {
-    // private categories: Array<any> = [
-    //     { id: 1, name: "huyen", key: "dep trai", description: "vo dich khap vu tru" },
-    //     { id: 2, name: "hehe", key: "qua dep trai", description: "dep trai nhat the gioi" }
-    // ];
-    private http: Http;
-    constructor(http: Http) {
-        this.http = http;
+    private iconnector: IConnector;
+    constructor(iconnector: HttpConnector) {
+        this.iconnector = iconnector;
     }
     public getCategories(): Promise {
-        // 1 return this.http.get("/api/categories.json").map(this.handleData);
-        //return Promise.resolve(this.categories);
-        let def = new Promise();
-        //2
-        //def.reject("errors aaaaa"); 
-        // def.resolve([{
-        //     "id": 1,
-        //     "name": "huyen",
-        //     "key": "dep trai",
-        //     "description": "vo dich khap vu tru"
-        // },
-        // {
-        //     "id": 2,
-        //     "name": "hehe",
-        //     "key": "qua dep trai",
-        //     "description": "dep trai nhat the gioi"
-        // }]);
-        //3
-        this.http.get("/api/categories.json")
-            .map(this.handleData)
-            .subscribe((data: any) => def.resolve(data),
-            (error: any) => def.reject("file not existed")
-            );
-        return def;
-    }
-
-    private handleData(response: Response) {
-        return response.json();
+        return this.iconnector.get("/api/categories.json");
     }
 }

@@ -1,3 +1,8 @@
+export class PromiseFactory{
+    public static create(): Promise{
+        return new Promise();
+    }
+}
 
 export class Promise {
     private data: any = null;
