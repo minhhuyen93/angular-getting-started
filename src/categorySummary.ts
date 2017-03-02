@@ -6,9 +6,10 @@ import { EventEmitter, Output, Component, Input } from "@angular/core";
 
 export class CategorySummary {
     @Input() key: any = null;
-    @Output() onKeyChanged: any = new EventEmitter<string>();
+    @Output() onValueChanged: any = new EventEmitter<string>();
 
-    public onValueChange() {
-        this.onKeyChanged.emit(this.key);
+    public onKeyChange(newKey:string) {
+        this.key = newKey;
+        this.onValueChanged.emit(this.key);
     }
 }

@@ -1,6 +1,8 @@
-<div class="x_panel">
-    <h2>List Category</h2>
-    <div class="x_content">
+<page>
+    <page-header>
+        <h2>List Category</h2>
+    </page-header>
+    <page-content>
         <table class="table">
             <thead>
                 <tr>
@@ -21,7 +23,7 @@
                 </tr>
             </tbody>
         </table>
-        <category-summary  *ngIf="selectedCategory" (onKeyChanged)="onKeyChanged($event)" [key]=selectedCategory.key></category-summary>
+        <category-summary *ngIf="selectedCategory" (onValueChanged)="onKeyChanged($event)" [(key)]=selectedCategory.key></category-summary>
         <label *ngIf="selectedCategory"> Key category changed: {{selectedCategory.key}}</label>
-    </div>
-</div>
+    </page-content>
+</page>

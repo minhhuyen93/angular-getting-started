@@ -8,10 +8,14 @@ import {AddOrEditCategory} from "./addOrEditCategory";
 import {CategoryService} from "./categoryService"   ;
 import {CategorySummary} from "./categorySummary";
 import {RedColor} from "./redColor";
+import {Page} from "./page";
+import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from "@angular/core";
+import {FormInput} from "./formInput";
 @NgModule({
     imports: [BrowserModule, FormsModule, SecutiryRoutes],
-    declarations: [DefaultPage, Categories, AddOrEditCategory, CategorySummary, RedColor],
+    declarations: [DefaultPage, Categories, AddOrEditCategory, CategorySummary, RedColor, Page,FormInput],
     providers:[CategoryService],
-    bootstrap: [DefaultPage]
+    bootstrap: [DefaultPage],
+    schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class SecurityModule { }
