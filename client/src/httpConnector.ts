@@ -2,6 +2,7 @@ import { Promise, PromiseFactory } from "./promise";
 import {Response, Http } from "@angular/http";
 import {IConnector} from "./iconnector";
 import {Injectable} from "@angular/core";
+import appConfig from "./appConfig";
 @Injectable()
 export class HttpConnector implements IConnector {
     private http: Http;
@@ -9,6 +10,8 @@ export class HttpConnector implements IConnector {
         this.http = http;
     }   
     public get(url: string): Promise {
+        let rootUrl = appConfig.rootUrl;
+        url = rootUrl + url;
         let def = PromiseFactory.create();
         this.http.get(url)
         .map(this.handleResponse)
