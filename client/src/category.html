@@ -1,0 +1,31 @@
+<page>
+  <page-header>
+    <h2>Categories</h2>
+  </page-header>
+  <page-content>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Key</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <th scope="row">{{category.id}}</th>
+          <td>{{category.name}}</td>
+          <td>{{category.key}}</td>
+          <td>{{category.description}}</td>
+
+          <td><button class="btn btn-primary" (click)="onEditCategoryClicked(category.id)">Edit</button></td>
+          <td><button class="btn btn-primary" (click)="onSummaryClicked(category)">Summary Category</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <category-summary (dataChange)="onChange($event)" [(data)]="selectedCategory.key" *ngIf="selectedCategory"></category-summary>
+    <label *ngIf="selectedCategory">Key Category change: {{selectedCategory.key}}</label>
+  </page-content>
+</page>
