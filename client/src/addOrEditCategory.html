@@ -1,8 +1,22 @@
-<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="x_panel">
-    <page-header></page-header>
-  </div>
-  <div class="x_content">
-    <page-content>content html</page-content>
-  </div>
-</div>
+<page>
+    <page-header>
+      <h2>Add Or Edit Category</h2>
+    </page-header>
+    <page-content>
+        <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+          <form-input [(value)]="category.name" [label]="'name'"></form-input>
+          <form-input [(value)]="category.key" [label]="'key'"></form-input>
+          <form-input [(value)]="category.description" [label]="'description'"></form-input>
+          <!--<div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+              <button class="btn btn-primary" type="button" (click)="onCancelClicked()">Cancel</button>
+              <button type="submit" class="btn btn-success" (click)="onSaveClicked()">Save</button>
+            </div>
+          </div>-->
+          <form-buttons>
+              <button class="btn btn-primary" type="button" (click)="onCancelClicked()">Cancel</button>
+              <button type="submit" class="btn btn-success" (click)="onSaveClicked()">Save</button>
+          </form-buttons>
+        </form>
+    </page-content>
+</page>

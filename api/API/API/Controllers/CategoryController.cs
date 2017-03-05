@@ -15,5 +15,12 @@
             ICategoryService categoryService = new CategoryService();
             return categoryService.GetCategories();
         }
+
+        [Route("")]
+        [HttpPost]
+        public Category CreateCategory(Category category) {
+            ICategoryService categoryService = new CategoryService();
+            return categoryService.CreateCategory(category);
+        }
     }
 }

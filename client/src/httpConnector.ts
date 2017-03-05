@@ -1,7 +1,7 @@
 import { Promise, PromiseFactory } from "./promise";
-import {Response, Http } from "@angular/http";
-import {IConnector} from "./iconnector";
-import {Injectable} from "@angular/core";
+import { Response, Http } from "@angular/http";
+import { IConnector } from "./iconnector";
+import { Injectable } from "@angular/core";
 import appConfig from "./appConfig";
 @Injectable()
 export class HttpConnector implements IConnector {
@@ -14,15 +14,27 @@ export class HttpConnector implements IConnector {
         url = rootUrl + url;
         let def = PromiseFactory.create();
         this.http.get(url)
-        .map(this.handleResponse)
+            .map(this.handleResponse)
+            .subscribe(
+            (data: any) => def.resolve(data),
+            (errors: any) => def.reject(errors)
+            );
+        return def;
+    }
+    public post(url: string, data:any): Promise {
+        let rootUrl = appConfig.rootUrl;
+        url = rootUrl + url;
+        let def = PromiseFactory.create();
+        this.http.post(url, data).map(this.handleResponse)
         .subscribe(
-            (data:any)=> def.resolve(data),
-            (errors:any) => def.reject(errors)
+            (data:any) => def.resolve(data),
+            (errors:any) => def.error(errors)
         );
         return def;
     }
 
-    private handleResponse(response: Response){
+
+    private handleResponse(response: Response) {
         return response.json();
     }
 }

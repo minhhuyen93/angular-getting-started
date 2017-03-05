@@ -7,7 +7,7 @@ export class FormInput{
     @Input() value:string;
     @Input() label:string;
     @Output() valueChange:any = new EventEmitter<string>();
-    public onChanged(){
+    public valueChanged(){
         this.valueChange.emit(this.value);
     }
 }

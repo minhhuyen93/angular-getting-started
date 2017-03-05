@@ -13,9 +13,10 @@ import { Page } from "./page";
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
 import { HttpModule } from "@angular/http";
 import {HttpConnector} from "./httpConnector";
+import {FormButton} from "./formButton";
 @NgModule({
     imports: [BrowserModule, FormsModule, SecurityRoutes, HttpModule],
-    declarations: [LayoutPage, Categories, AddOrEditCategory, RedColor, CategorySummary, FormInput, Page],
+    declarations: [LayoutPage, Categories, AddOrEditCategory, RedColor, CategorySummary, FormInput, Page, FormButton],
     providers: [CategoryService, HttpConnector],
     bootstrap: [LayoutPage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
