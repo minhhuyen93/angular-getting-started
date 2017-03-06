@@ -12,6 +12,14 @@
         {
             this.context = new DbContext();
         }
+
+        public Category CreateCategory(Category category)
+        {
+            this.context.Categories.Add(category);
+            this.context.SaveChanges();
+            return category;
+        }
+
         public IList<Category> GetCategories()
         {
             return this.context.Categories.ToList();
