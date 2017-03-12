@@ -19,7 +19,7 @@ import { FormButtonPrimary } from "./formPrimaryButton";
 @NgModule({
     imports: [BrowserModule, FormsModule, SecurityRoutes, HttpModule],
     declarations: [LayoutPage, Categories, AddOrEditCategory, RedColor, CategorySummary, FormInput, Page, FormButton, HorizalForm, FormButtonPrimary],
-    providers: [CategoryService, HttpConnector],
+     providers: [CategoryService],
     bootstrap: [LayoutPage],
     schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })

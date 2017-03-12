@@ -7,15 +7,19 @@ import {IConnector} from "./iconnector";
 import {HttpConnector} from "./httpConnector";
 @Injectable()
 export class CategoryService {
-    private iconnector: IConnector;
-    constructor(iconnector: HttpConnector) {
-        this.iconnector = iconnector;
-    }
+    // private iconnector: IConnector;
+    // constructor(iconnector: HttpConnector) {
+    //     this.iconnector = iconnector;
+    // }
     public getCategories(): Promise {
-        return this.iconnector.get("/categories");
+        // return this.iconnector.get("/categories");
+        let iconnector = window.ioc.resolve("iconnector");
+        return iconnector.get("/categories");
     }
 
     public createCategory(data:any):Promise{
-        return this.iconnector.post("/categories", data);
+        // return this.iconnector.post("/categories", data);
+        let iconnector = window.ioc.resolve("iconnector");
+        return iconnector.post("/categories", data);
     }
 }
