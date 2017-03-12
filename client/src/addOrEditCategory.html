@@ -1,16 +1,14 @@
 <page>
   <page-header>
-    <h2>Add or Edit Category</h2>
+    Add or Edit Category
   </page-header>
   <page-content>
-    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
-      <form-input [(value)]="category.name" [label]="'name'"></form-input>
-      <form-input [(value)]="category.key" [label]="'key'"></form-input>
-      <form-input [(value)]="category.description" [label]="'description'"></form-input>
-      <form-buttons>
-        <button class="btn btn-primary" type="button" (click)="onCancelClicked()">Cancel</button>
-        <button type="submit" class="btn btn-success" (click)="onSaveClicked()">Save</button>
-      </form-buttons>
-    </form>
+    <horizal-form>
+      <form-input [(value)]="model.name" [label]="'name'"></form-input>
+      <form-input [(value)]="model.key" [label]="'key'"></form-input>
+      <form-input [(value)]="model.description" [label]="'description'"></form-input>
+      <form-button [label]="'Cancel'" (click)="onCancelClicked()"></form-button>
+      <form-button-primary [label]="'Save'" (click)="onSaveClicked()"></form-button-primary>
+    </horizal-form>
   </page-content>
 </page>
