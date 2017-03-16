@@ -1,8 +1,14 @@
-<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="x_panel">
-    <page-header></page-header>
-  </div>
-  <div class="x_content">
-    <page-content>content html</page-content>
-  </div>
-</div>
+<page>
+  <page-header>
+    Add or Edit Category
+  </page-header>
+  <page-content>
+    <horizal-form>
+      <form-input [(value)]="model.name" [label]="'name'"></form-input>
+      <form-input [(value)]="model.key" [label]="'key'"></form-input>
+      <form-input [(value)]="model.description" [label]="'description'"></form-input>
+      <form-button [label]="'Cancel'" (click)="onCancelClicked()"></form-button>
+      <form-button-primary [label]="'Save'" (click)="onSaveClicked()"></form-button-primary>
+    </horizal-form>
+  </page-content>
+</page>
