@@ -10,6 +10,7 @@ export class BasePage implements AfterViewInit {
     }
     protected onReady() {
     }
+    
     protected navigate(url: string, ...option: Array<any>) {
         let params = option ||[];
         params.unshift(url);
