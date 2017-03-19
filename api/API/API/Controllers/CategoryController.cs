@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
     using System.Web.Http;
-    using Models;
-    using Service;
+    using Api.Context;
+    using Api.Service;
 
     [RoutePrefix("api/categories")]
     public class CategoryController : ApiController

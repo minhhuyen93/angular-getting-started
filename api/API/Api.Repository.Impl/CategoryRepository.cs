@@ -1,9 +1,9 @@
-﻿namespace API.Repository
+﻿namespace Api.Repository.Impl
 {
     using System.Collections.Generic;
     using System.Linq;
-    using API.Context;
-    using API.Models;
+    using Api.Context;
+    using Api.Repository;
     public class CategoryRepository : ICategoryRepository
     {
         private DbContext context;

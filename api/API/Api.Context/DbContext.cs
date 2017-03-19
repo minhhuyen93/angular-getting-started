@@ -1,8 +1,6 @@
-﻿namespace API.Context
+﻿namespace Api.Context
 {
     using System.Data.Entity;
-    using Models;
-
     public class DbContext: System.Data.Entity.DbContext
     {
         public DbContext(): base("Default")

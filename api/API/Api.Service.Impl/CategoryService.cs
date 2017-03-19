@@ -1,9 +1,10 @@
-﻿namespace API.Service
+﻿namespace Api.Service
 {
     using System;
     using System.Collections.Generic;
-    using Models;
-    using Repository;
+    using Api.Context;
+    using Api.Repository;
+    using Api.Repository.Impl;
 
     public class CategoryService : ICategoryService
     {

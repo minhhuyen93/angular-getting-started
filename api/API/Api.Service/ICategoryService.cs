@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using API.Models;
-
-namespace API.Service
+﻿namespace Api.Service
 {
+    using Api.Context;
+    using System.Collections.Generic;
     public interface ICategoryService
     {
         IList<Category> GetCategories();
