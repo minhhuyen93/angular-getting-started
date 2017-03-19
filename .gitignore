@@ -11,3 +11,5 @@ api/API/Api.Service/bin/
 api/API/Api.Service/obj/
 api/API/Api.Context/obj/
 api/API/Api.Context/bin/
+api/API/Api.Common/obj/
+api/API/Api.Common/bin/

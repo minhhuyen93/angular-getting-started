@@ -1,5 +1,6 @@
 ﻿namespace Api.Repository.Impl
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Api.Context;
@@ -22,6 +23,11 @@
         public IList<Category> GetCategories()
         {
             return this.context.Categories.ToList();
+        }
+
+        public Category GetCategoryByName(string name)
+        {
+            return this.context.Categories.FirstOrDefault(item => item.Name == name);
         }
     }
 }

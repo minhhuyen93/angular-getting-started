@@ -6,5 +6,6 @@
     {
         IList<Category> GetCategories();
         Category CreateCategory(Category category);
+        LoginResponse Login(LoginRequest request);
     }
 }
