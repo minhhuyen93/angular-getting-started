@@ -1,7 +1,7 @@
 import { Promise, PromiseFactory } from "./promise";
 import { Response, Http } from "@angular/http";
 import { IConnector } from "./iconnector";
-import { Injectable } from "@angular/core";
+// import { Injectable } from "@angular/core";
 import appConfig from "./appConfig";
 // @Injectable()
 export class HttpConnector implements IConnector {
