@@ -1,9 +1,10 @@
-﻿namespace API.Repository
+﻿namespace Api.Repository.Impl
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using API.Context;
-    using API.Models;
+    using Api.Context;
+    using Api.Repository;
     public class CategoryRepository : ICategoryRepository
     {
         private DbContext context;
@@ -22,6 +23,11 @@
         public IList<Category> GetCategories()
         {
             return this.context.Categories.ToList();
+        }
+
+        public Category GetCategoryByName(string name)
+        {
+            return this.context.Categories.FirstOrDefault(item => item.Name == name);
         }
     }
 }
