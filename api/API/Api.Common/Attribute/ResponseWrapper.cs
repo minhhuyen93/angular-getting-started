@@ -1,7 +1,6 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http.Filters;
-using Api.Common.Models;
 
 namespace Api.Common.Attribute
 {
@@ -19,6 +18,7 @@ namespace Api.Common.Attribute
                 response.AddErrors(((ValidationException)actionExecutedContext.Exception).Errors);
                 actionExecutedContext.Response = actionExecutedContext.Request.CreateResponse(HttpStatusCode.BadRequest, response);
             }
+            DownloadProgressChangedEventArgs conflixt
         }
     }
 }
