@@ -13,3 +13,7 @@ api/API/Api.Context/obj/
 api/API/Api.Context/bin/
 api/API/Api.Common/obj/
 api/API/Api.Common/bin/
+api/API/.vs/API/v15/Server/sqlite3/storage.ide-wal
+api/API/.vs/API/v15/Server/sqlite3/storage.ide-shm
+api/API/.vs/API/v15/Server/sqlite3/storage.ide
+api/API/.vs/API/v15/Server/sqlite3/db.lock
