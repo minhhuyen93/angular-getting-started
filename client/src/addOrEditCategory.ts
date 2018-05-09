@@ -23,7 +23,6 @@ export class AddOrEditCategory extends BasePage {
     public onSaveClicked() {
         let self = this;
         self.categoryService.createCategory(self.model).then(function () {
-            // self.route.navigate(["/categories"]);
             self.navigate("/categories");
         });
     }

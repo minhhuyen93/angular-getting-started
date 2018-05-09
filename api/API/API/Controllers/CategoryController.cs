@@ -34,7 +34,7 @@
         [ResponseWrapper]
         public Category CreateCategory(Category category)
         {
-                ICategoryService categoryService = new CategoryService();
+                CategoryService categoryService = new CategoryService();
                 return categoryService.CreateCategory(category);
         }
     }
